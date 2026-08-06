@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="grain relative overflow-hidden border-b border-tierra/15 pt-32 pb-20 md:min-h-screen md:pt-40 md:pb-24"
+      className="grain relative overflow-hidden border-b border-tierra/15 pt-32 pb-20 md:flex md:min-h-screen md:items-center md:pt-40 md:pb-24"
     >
       <div className="halftone pointer-events-none absolute inset-x-0 top-0 h-64 opacity-60" aria-hidden />
       <div className="relative mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-14 px-6 md:grid-cols-12 md:gap-8 lg:px-16">
@@ -31,7 +31,7 @@ export function Hero() {
             Más tiempo
             <br />
             para lo{" "}
-            <span className="relative inline-block">
+            <span className="relative inline-block whitespace-nowrap">
               humano
               <motion.span
                 aria-hidden
@@ -40,8 +40,8 @@ export function Hero() {
                 transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute -bottom-1 left-0 h-[3px] w-full origin-left bg-alma md:h-[5px]"
               />
+              <span className="text-alma">.</span>
             </span>
-            <span className="text-alma">.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-tinta/85 md:text-xl">

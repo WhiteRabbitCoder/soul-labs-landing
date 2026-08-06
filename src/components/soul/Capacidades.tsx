@@ -72,7 +72,7 @@ function Visual({ k }: { k: string }) {
 
 export function Capacidades() {
   return (
-    <section id="capacidades" className="border-b border-tierra/15 py-24 md:py-36">
+    <section id="capacidades" className="scroll-mt-28 border-b border-tierra/15 py-24 md:py-36">
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
         <Reveal className="max-w-2xl">
           <p className="text-[11px] font-semibold tracking-[0.28em] text-alma uppercase">

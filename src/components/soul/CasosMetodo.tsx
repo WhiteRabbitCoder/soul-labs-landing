@@ -23,7 +23,7 @@ const casos = [
 
 export function Casos() {
   return (
-    <section id="casos" className="border-b border-tierra/15 py-24 md:py-36">
+    <section id="casos" className="scroll-mt-28 border-b border-tierra/15 py-24 md:py-36">
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
         <Reveal className="max-w-3xl">
           <p className="text-[11px] font-semibold tracking-[0.28em] text-alma uppercase">
@@ -90,7 +90,7 @@ const pasos = [
 
 export function Metodo() {
   return (
-    <section id="metodo" className="border-b border-tierra/15 bg-tinta py-24 text-luz md:py-36">
+    <section id="metodo" className="scroll-mt-28 border-b border-tierra/15 bg-tinta py-24 text-luz md:py-36">
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
         <Reveal className="max-w-2xl">
           <p className="text-[11px] font-semibold tracking-[0.28em] text-alma uppercase">Método</p>

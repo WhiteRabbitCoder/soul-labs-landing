@@ -72,7 +72,7 @@ function Diagram({ i }: { i: number }) {
 
 export function QueHacemos() {
   return (
-    <section id="filosofia" className="relative border-b border-tierra/15 py-24 md:py-36">
+    <section id="filosofia" className="scroll-mt-28 relative border-b border-tierra/15 py-24 md:py-36">
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-12 px-6 md:grid-cols-12 lg:px-16">
         <Reveal className="md:col-span-5">
           <p className="text-[11px] font-semibold tracking-[0.28em] text-alma uppercase">

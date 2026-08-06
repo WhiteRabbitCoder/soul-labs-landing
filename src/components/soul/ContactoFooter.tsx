@@ -38,7 +38,7 @@ export function Contacto() {
     "mt-2 w-full border border-tierra/30 bg-luz px-4 py-3.5 text-base text-tinta placeholder:text-tinta/40 transition-colors duration-200 focus:border-alma focus:outline-none";
 
   return (
-    <section id="contacto" className="grain relative bg-papel py-24 md:py-36">
+    <section id="contacto" className="scroll-mt-28 grain relative bg-papel py-24 md:py-36">
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-14 px-6 md:grid-cols-12 lg:px-16">
         <Reveal className="md:col-span-5">
           <p className="text-[11px] font-semibold tracking-[0.28em] text-alma uppercase">
