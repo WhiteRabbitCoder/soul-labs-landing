@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/soul/Navbar";
+import { Hero } from "@/components/soul/Hero";
+import { QueHacemos } from "@/components/soul/QueHacemos";
+import { Problema } from "@/components/soul/Problema";
+import { Manifiesto } from "@/components/soul/Manifiesto";
+import { Capacidades } from "@/components/soul/Capacidades";
+import { Diferenciales } from "@/components/soul/Diferenciales";
+import { Casos, Metodo } from "@/components/soul/CasosMetodo";
+import { Contacto, Footer } from "@/components/soul/ContactoFooter";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Soul Labs — Más tiempo para lo humano";
+const description =
+  "Software factory y laboratorio de IA aplicada: agentes, automatización y productos que recuperan horas de tu equipo sin retirar el criterio humano.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <h1 className="sr-only">Soul Labs, laboratorio de inteligencia artificial aplicada</h1>
+        <Hero />
+        <QueHacemos />
+        <Problema />
+        <Manifiesto />
+        <Capacidades />
+        <Diferenciales />
+        <Casos />
+        <Metodo />
+        <Contacto />
+      </main>
+      <Footer />
+    </>
   );
 }
