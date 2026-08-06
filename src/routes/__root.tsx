@@ -10,6 +10,7 @@ import { useEffect, type ReactNode } from "react";
 import { SoulMark } from "@/components/brand/SoulMark";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
+import wordmark from "@/assets/brand/vectors/soul-labs-wordmark.svg";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -92,7 +93,7 @@ export const Route = createRootRouteWithContext<Record<string, never>>()({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: wordmark, type: "image/svg+xml" },
     ],
   }),
   shellComponent: RootShell,
