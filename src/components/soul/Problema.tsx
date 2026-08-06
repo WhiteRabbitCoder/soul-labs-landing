@@ -53,7 +53,7 @@ export function Problema() {
               <motion.li
                 key={p.t}
                 variants={revealVariants}
-                whileHover={reduced ? undefined : { y: -6 }}
+                whileHover={reduced ? {} : { y: -6 }}
                 className={`group relative border border-tierra/25 bg-luz p-7 shadow-[0_20px_50px_-40px_oklch(0.348_0.055_45.5_/_80%)] transition-colors duration-300 hover:border-alma md:p-9 ${p.cls}`}
               >
                 <span className="absolute -top-2.5 left-6 bg-papel px-2 text-[11px] tracking-[0.22em] text-alma">
