@@ -30,7 +30,6 @@ function Index() {
     <>
       <Navbar />
       <main>
-        <h1 className="sr-only">Soul Labs, laboratorio de inteligencia artificial aplicada</h1>
         <Hero />
         <QueHacemos />
         <Problema />
