@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComoTrabajamosRouteImport } from './routes/como-trabajamos'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as LaboratorioRouteImport } from './routes/laboratorio'
+import { Route as MoreHumanRouteImport } from './routes/more-human'
+import { Route as SolucionesRouteImport } from './routes/soluciones'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoTrabajamosRoute = ComoTrabajamosRouteImport.update({
+  id: '/como-trabajamos',
+  path: '/como-trabajamos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaboratorioRoute = LaboratorioRouteImport.update({
+  id: '/laboratorio',
+  path: '/laboratorio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoreHumanRoute = MoreHumanRouteImport.update({
+  id: '/more-human',
+  path: '/more-human',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucionesRoute = SolucionesRouteImport.update({
+  id: '/soluciones',
+  path: '/soluciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-trabajamos': typeof ComoTrabajamosRoute
+  '/contacto': typeof ContactoRoute
+  '/laboratorio': typeof LaboratorioRoute
+  '/more-human': typeof MoreHumanRoute
+  '/soluciones': typeof SolucionesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-trabajamos': typeof ComoTrabajamosRoute
+  '/contacto': typeof ContactoRoute
+  '/laboratorio': typeof LaboratorioRoute
+  '/more-human': typeof MoreHumanRoute
+  '/soluciones': typeof SolucionesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-trabajamos': typeof ComoTrabajamosRoute
+  '/contacto': typeof ContactoRoute
+  '/laboratorio': typeof LaboratorioRoute
+  '/more-human': typeof MoreHumanRoute
+  '/soluciones': typeof SolucionesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/como-trabajamos'
+    | '/contacto'
+    | '/laboratorio'
+    | '/more-human'
+    | '/soluciones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/como-trabajamos'
+    | '/contacto'
+    | '/laboratorio'
+    | '/more-human'
+    | '/soluciones'
+  id:
+    | '__root__'
+    | '/'
+    | '/como-trabajamos'
+    | '/contacto'
+    | '/laboratorio'
+    | '/more-human'
+    | '/soluciones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoTrabajamosRoute: typeof ComoTrabajamosRoute
+  ContactoRoute: typeof ContactoRoute
+  LaboratorioRoute: typeof LaboratorioRoute
+  MoreHumanRoute: typeof MoreHumanRoute
+  SolucionesRoute: typeof SolucionesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +117,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-trabajamos': {
+      id: '/como-trabajamos'
+      path: '/como-trabajamos'
+      fullPath: '/como-trabajamos'
+      preLoaderRoute: typeof ComoTrabajamosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laboratorio': {
+      id: '/laboratorio'
+      path: '/laboratorio'
+      fullPath: '/laboratorio'
+      preLoaderRoute: typeof LaboratorioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/more-human': {
+      id: '/more-human'
+      path: '/more-human'
+      fullPath: '/more-human'
+      preLoaderRoute: typeof MoreHumanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soluciones': {
+      id: '/soluciones'
+      path: '/soluciones'
+      fullPath: '/soluciones'
+      preLoaderRoute: typeof SolucionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoTrabajamosRoute: ComoTrabajamosRoute,
+  ContactoRoute: ContactoRoute,
+  LaboratorioRoute: LaboratorioRoute,
+  MoreHumanRoute: MoreHumanRoute,
+  SolucionesRoute: SolucionesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
