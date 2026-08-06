@@ -10,7 +10,7 @@ import { useEffect, type ReactNode } from "react";
 import { SoulMark } from "@/components/brand/SoulMark";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
-import favicon from "@/assets/brand/vectors/chimera-contemplating.svg";
+import favicon from "@/assets/brand/vectors/favicon-moon.svg";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {

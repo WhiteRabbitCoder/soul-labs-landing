@@ -11,5 +11,6 @@ Correspondencia semántica de los vectores:
 - `chimera-contemplating.svg`: quimera sentada frente a la luna.
 - `chimera-leaping.svg`: quimera avanzando en un salto.
 - `soul-labs-wordmark.svg`: wordmark oficial, conservado como fuente de marca.
+- `favicon-moon.svg`: derivado vectorial mínimo de la luna naranja, usado en las pestañas del navegador.
 
 Los tamaños intrínsecos declarados por `ChimeraArtwork` replican cada `viewBox`, mientras que el tamaño visual sigue controlado por CSS. Esto mantiene estable el layout y permite escalar sin pérdida de definición.
